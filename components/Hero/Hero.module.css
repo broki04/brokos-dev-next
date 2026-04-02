@@ -1,0 +1,57 @@
+.spinning__ring__inner,
+.spinning__ring__outer {
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.spinning__ring__inner::before,
+.spinning__ring__outer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  padding: 1px;
+  background: conic-gradient(#00d4ff, #7b61ff, transparent, #00d4ff);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.2;
+  transition: opacity 0.4s ease;
+}
+
+.spinning__ring__outer::before {
+  background: conic-gradient(#7b61ff, #00d4ff, transparent, #7b61ff);
+}
+
+.photo__wrapper:hover .spinning__ring__inner::before {
+  opacity: 1;
+  animation: spinInner 3s linear infinite;
+}
+
+.photo__wrapper:hover .spinning__ring__outer::before {
+  opacity: 1;
+  animation: spinOuter 3s linear infinite;
+}
+
+@keyframes spinInner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinOuter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
