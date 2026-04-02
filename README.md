@@ -1,65 +1,49 @@
-# Portfolio – Broki
+# Broki – Portfolio Front-end
 
-![Portfolio Banner](./public/hero-banner.jpg)
+![Portfolio Banner](./public/images/hero-bg.svg)
 
 Cześć! 👋  
-To jest moje **portfolio front-end** stworzone w Next.js z wykorzystaniem Tailwind CSS i nowoczesnych praktyk web developmentu.
+To jest moje **portfolio front-end** stworzone w **Next.js + TypeScript + Tailwind CSS**.  
+Zawiera projekty, sekcję umiejętności i formularz kontaktowy.
+
+---
+
+## 🚀 Live Preview
+
+[🌐 Zobacz działającą stronę](https://broki-portfolio.vercel.app)
 
 ---
 
 ## 🛠 Technologie
 
-- **Next.js 14** – framework React do SSR i SSG
-- **React** – interaktywne komponenty UI
-- **TypeScript** – typowanie dla większej pewności kodu
-- **Tailwind CSS / SCSS** – stylowanie responsywne i nowoczesne
-- **Vercel** – hosting front-endu
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
 ---
 
-## 📂 Struktura projektu
+## 📌 One-page Summary
 
-/portfolio
-├─ /public # statyczne obrazy i assets
-├─ /src
-│ ├─ /components # wszystkie komponenty (Navbar, Footer, PortfolioCard)
-│ ├─ /pages # strony Next.js
-│ └─ /styles # pliki SCSS / Tailwind CSS
-├─ next.config.js # konfiguracja Next.js
-├─ package.json
-└─ README.md
-
----
-
-## 🌐 Funkcjonalności
-
-- Responsywna strona landingowa
-- Sekcja **Umiejętności** z ikonami technologii
-- Interaktywny **Portfolio Grid** z filtrami: Strony WWW, Sklepy, Aplikacje
-- Formularz kontaktowy z walidacją
-- Łatwa nawigacja: Navbar + Footer
-- Animacje wchodzące komponentów (Framer Motion)
-- Optymalizacja wydajności: `<Image>` z `fill`, `sizes`, LCP, lazy-loading
+- **Landing Page** z sekcją powitalną i animacjami
+- **Sekcja Umiejętności** z ikonami technologii
+- **Portfolio Grid** z filtrami: Strony WWW / Sklepy / Aplikacje
+- **Formularz Kontaktowy** z walidacją
+- **Navbar + Footer** – pełna nawigacja
+- **Optymalizacja obrazów**: `<Image fill>` z `sizes`, LCP i lazy-loading
+- **Responsywność mobile-first**
+- **Animacje komponentów** z Framer Motion
 
 ---
 
-## 🚀 Instalacja
+## ⚡ Instalacja
 
-1. Sklonuj repozytorium:
-
-````bash
-git clone https://github.com/broki04/portfolio.git```
-
-2. Zainstaluj zależności:
 ```bash
-cd portfolio
+git clone https://github.com/broki04/brokos-dev-next.git
+cd brokos-dev-next
 npm install
-````
-
-3. Uruchom lokalny serwer deweloperski:
-
-```bash
 npm run dev
 ```
 
-Strona powinna być dostępna pod `http://localhost:3000`
+Strona działa na `http://localhost:3000`
