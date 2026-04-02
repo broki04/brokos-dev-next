@@ -16,6 +16,7 @@ type Status = "idle" | "loading" | "success" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
+  const statusMessageId = "contact-form-status";
 
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,28 +46,28 @@ export default function Contact() {
   return (
     <section id="contact" className="py-32 px-6 bg-brand-darker relative">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Porozmawiajmy
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-12">
+          <div>
+            <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
+              Porozmawiajmy
+            </p>
 
-          <h2 className="text-3xl lg:text-4xl font-bold text-brand-text">
-            Napisz do{" "}
-            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-              mnie
-            </span>
-          </h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-text">
+              Napisz do{" "}
+              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
+                mnie
+              </span>
+            </h2>
 
-          <p className="mt-4 text-brand-muted text-sm leading-relaxed max-w-lg">
-            Masz projekt do zrealizowania? Chętnie porozmawiam o szczegółach.
-            Odpowiadam zazwyczaj w ciągu 24 godzin.
-          </p>
-        </div>
+            <p className="mt-4 text-brand-muted text-sm leading-relaxed max-w-lg">
+              Masz projekt do zrealizowania? Chętnie porozmawiam o szczegółach.
+              Odpowiadam zazwyczaj w ciągu 24 godzin.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <div className="flex flex-col gap-8">
-            <div>
-              <p className="text-brand-muted text-xs font-mono tracking-[2px] uppercase mb-2">
+          <div className="flex flex-col gap-8 lg:justify-self-end lg:w-full lg:max-w-sm">
+            <div className="mt-4">
+              <p className="text-brand-cyan text-xs font-mono tracking-[2px] uppercase mb-2">
                 Email
               </p>
               <a
@@ -78,7 +79,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <p className="text-brand-muted text-xs font-mono tracking-[2px] uppercase mb-2">
+              <p className="text-brand-cyan text-xs font-mono tracking-[2px] uppercase mb-2">
                 Discord
               </p>
               <a
@@ -86,6 +87,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-brand-text text-sm hover:text-brand-cyan transition-colors duration-200"
+                aria-label="Profil Discord: brokikrul"
               >
                 <MessageCircle size={16} />
                 brokikrul
@@ -93,31 +95,44 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        <div className="lg:col-span-2 mt-12">
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <div className="lg:col-span-2 mt-6">
+          <form
+            className="flex flex-col gap-4"
+            onSubmit={handleSubmit}
+            aria-describedby={status !== "idle" ? statusMessageId : undefined}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
-                <label className="text-brand-muted text-xs font-mono tracking-[2px] uppercase">
+                <label
+                  htmlFor="contact-name"
+                  className="text-brand-muted text-xs font-mono tracking-[2px] uppercase"
+                >
                   Imię i nazwisko
                 </label>
 
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   placeholder="Jan Kowalski"
+                  autoComplete="name"
                   className="bg-brand-dark border border-brand-surface rounded-xl px-4 py-3 text-brand-text text-sm placeholder:text-brand-subtle focus:outline-none focus:border-brand-cyan transition-colors duration-200"
                   required
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label className="text-brand-muted text-xs font-mono tracking-[2px] uppercase">
+                <label
+                  htmlFor="contact-email"
+                  className="text-brand-muted text-xs font-mono tracking-[2px] uppercase"
+                >
                   Email
                 </label>
 
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
+                  autoComplete="email"
                   placeholder="twój@mail.pl"
                   className="bg-brand-dark border border-brand-surface rounded-xl px-4 py-3 text-brand-text text-sm placeholder:text-brand-subtle focus:outline-none focus:border-brand-cyan transition-colors duration-200"
                   required
@@ -126,13 +141,18 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-brand-muted text-xs font-mono tracking-[2px] uppercase">
+              <label
+                htmlFor="contact-subject"
+                className="text-brand-muted text-xs font-mono tracking-[2px] uppercase"
+              >
                 Temat
               </label>
 
               <input
+                id="contact-subject"
                 type="text"
                 name="subject"
+                autoComplete="off"
                 placeholder="Strona internetowa dla firmy"
                 className="bg-brand-dark border border-brand-surface rounded-xl px-4 py-3 text-brand-text text-sm placeholder:text-brand-subtle focus:outline-none focus:border-brand-cyan transition-colors duration-200"
                 required
@@ -140,11 +160,15 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-brand-muted text-xs font-mono tracking-[2px] uppercase">
+              <label
+                htmlFor="contact-budget"
+                className="text-brand-muted text-xs font-mono tracking-[2px] uppercase"
+              >
                 Budżet projektu
               </label>
 
               <select
+                id="contact-budget"
                 name="budget"
                 className="bg-brand-dark border border-brand-surface rounded-xl px-4 py-3 text-brand-text text-sm focus:outline-none focus:border-brand-cyan transition-colors duration-200 appearance-none cursor-pointer"
               >
@@ -160,13 +184,18 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-brand-muted text-xs font-mono tracking-[2px] uppercase">
+              <label
+                htmlFor="contact-message"
+                className="text-brand-muted text-xs font-mono tracking-[2px] uppercase"
+              >
                 Wiadomość
               </label>
 
               <textarea
+                id="contact-message"
                 name="message"
                 rows={5}
+                autoComplete="off"
                 placeholder="Opisz swój projekt..."
                 className="bg-brand-dark border border-brand-surface rounded-xl px-4 py-3 text-brand-text text-sm placeholder:text-brand-subtle focus:outline-none focus:border-brand-cyan transition-colors duration-200 resize-none"
                 required
@@ -189,13 +218,23 @@ export default function Contact() {
             </button>
 
             {status === "success" && (
-              <div className="flex items-center gap-2 text-green-400 text-sm">
+              <div
+                id={statusMessageId}
+                role="status"
+                aria-live="polite"
+                className="flex items-center gap-2 text-green-400 text-sm"
+              >
                 <CheckCircle2 size={16} />
                 Wiadomość wysłana! Odezwę się wkrótce.
               </div>
             )}
             {status === "error" && (
-              <div className="flex items-center gap-2 text-red-400 text-sm">
+              <div
+                id={statusMessageId}
+                role="alert"
+                aria-live="assertive"
+                className="flex items-center gap-2 text-red-400 text-sm"
+              >
                 <AlertCircle size={16} />
                 Coś poszło nie tak. Spróbuj ponownie, lub napisz bezpośrednio na
                 e-mail lub Discord.

@@ -11,7 +11,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const jetbraisMono = JetBrains_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
@@ -28,8 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${jetbraisMono.variable} ${inter.variable} h-full antialiased`}
+      lang="pl"
+      className={`${jetbrainsMono.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar NAV_LINKS={NAV_LINKS} />

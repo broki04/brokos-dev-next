@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SERVICES } from "../data/services";
 
 export default function Services() {
@@ -49,12 +50,13 @@ export default function Services() {
                 </ul>
               </div>
 
-              <div className={i % 2 !== 0 ? "lg:[direction-ltr]" : ""}>
+              <div className={i % 2 !== 0 ? "lg:[direction:ltr]" : ""}>
                 <div className="relative isolate rounded-2xl overflow-hidden border border-brand-surface aspect-video group">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
                   <div className="absolute inset-0 bg-linear-to-br from-brand-cyan/10 to-brand-purple/10" />

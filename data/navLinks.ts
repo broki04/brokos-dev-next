@@ -13,7 +13,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Umiejętności", href: "/#skills", portfolio: false },
   {
     label: "Portfolio",
-    href: "/portfolio",
+    href: "/projects",
     portfolio: false,
     dropdown: [
       { label: "Wszystkie", href: "/projects" },
