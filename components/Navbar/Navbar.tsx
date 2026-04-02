@@ -56,7 +56,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
           </h1>
 
           <ul className="hidden md:flex space-x-8 items-center text-sm font-medium">
-            {links.map((link) => (
+            {links.map((link, index) => (
               <li
                 key={link.href}
                 className="relative"
@@ -64,6 +64,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
                 onMouseLeave={() => setDropdownOpen(null)}
               >
                 <Link
+                  key={`${link.href}-${index}`}
                   href={link.href}
                   className={`${styles.nav__link} flex items-center gap-1 transition-colors duration-300 ${
                     isActive(link.href)
@@ -146,8 +147,8 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
                       ${menuOpen ? "translate-x-0" : "-translate-x-full"}`}
           onClick={(e) => e.stopPropagation()}
         >
-          {links.map((link) => (
-            <div key={link.href}>
+          {links.map((link, index) => (
+            <div key={`${link.href}-${index}`}>
               <Link
                 href={link.href}
                 className={`block text-lg font-medium ${
@@ -165,9 +166,9 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
                       : "opacity-0 max-h-0 overflow-hidden"
                   }`}
                 >
-                  {link.dropdown.map((d) => (
+                  {link.dropdown.map((d, i) => (
                     <Link
-                      key={d.href}
+                      key={`${d.href}-${i}`}
                       href={d.href}
                       className="block text-sm text-brand-muted hover:text-brand-cyan"
                       onClick={() => setMenuOpen(false)}

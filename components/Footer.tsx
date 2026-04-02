@@ -40,8 +40,8 @@ export default function Footer() {
           </p>
 
           <ul className="flex flex-col gap-3">
-            {NAV_LINKS.map(({ label, href }) => (
-              <li key={href}>
+            {NAV_LINKS.map(({ label, href }, index) => (
+              <li key={`${href}-${index}`}>
                 <a
                   href={href}
                   className="text-brand-muted text-sm hover:text-brand-cyan transition-colors duration-200"

@@ -56,7 +56,9 @@ export default function Services() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="eager"
                   />
 
                   <div className="absolute inset-0 bg-linear-to-br from-brand-cyan/10 to-brand-purple/10" />

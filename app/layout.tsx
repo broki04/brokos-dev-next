@@ -30,6 +30,7 @@ export default function RootLayout({
     <html
       lang="pl"
       className={`${jetbrainsMono.variable} ${inter.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
         <Navbar NAV_LINKS={NAV_LINKS} />

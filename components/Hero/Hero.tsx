@@ -8,12 +8,14 @@ import avatarImage from "@/public/me.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen">
+    <section className="relative w-full h-screen">
       <Image
         src={heroImage}
         alt="Hero background"
         className="object-cover"
         fill
+        sizes="100vw"
+        loading="eager"
         priority
       />
 
@@ -70,10 +72,12 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full bg-linear-to-br from-brand-cyan/20 to-brand-purple/20 blur-3xl scale-110" />
 
               <div className="relative w-72 h-72 xl:w-80 xl:h-80 rounded-full border border-brand-darker overflow-hidden z-10">
-                <div className="w-full h-full bg-linear-to-br from-brand-dark to-brand-darker flex items-center justify-center">
+                <div className="relative w-full h-full bg-linear-to-br from-brand-dark to-brand-darker flex items-center justify-center">
                   <Image
                     src={avatarImage}
                     alt="photo"
+                    sizes="50vw"
+                    loading="eager"
                     fill
                     className="object-cover"
                   />
