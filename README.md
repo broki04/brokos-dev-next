@@ -1,7 +1,5 @@
 # Broki – Portfolio Front-end
 
-![Portfolio Banner](./public/images/hero-bg.svg)
-
 Cześć! 👋  
 To jest moje **portfolio front-end** stworzone w **Next.js + TypeScript + Tailwind CSS**.  
 Zawiera projekty, sekcję umiejętności i formularz kontaktowy.
