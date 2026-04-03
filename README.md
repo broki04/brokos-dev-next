@@ -8,7 +8,7 @@ Zawiera projekty, sekcję umiejętności i formularz kontaktowy.
 
 ## 🚀 Live Preview
 
-[🌐 Zobacz działającą stronę](https://broki-portfolio.vercel.app)
+[🌐 Zobacz działającą stronę](https://brokos-dev-next.vercel.app)
 
 ---
 
