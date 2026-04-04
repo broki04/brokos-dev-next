@@ -13,6 +13,7 @@ import {
 } from "react-icons/si";
 import { Project, PROJECTS } from "@/data/projects";
 import { ExternalLink } from "lucide-react";
+import RevealSection from "@/components/ui/RevealSection";
 
 const TIMELINE = [
   {
@@ -103,7 +104,7 @@ function StackBadge({
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group flex flex-col rounded-2xl border border-brand-surface bg-brand-dark overflow-hidden hover:border-brand-subtle transition-all duration-300 hover:-translate-y-1">
+    <div className="group flex flex-col h-full rounded-2xl border border-brand-surface bg-brand-dark overflow-hidden hover:border-brand-subtle transition-all duration-300 hover:-translate-y-1">
       <div className="relative aspect-4/3 overflow-hidden bg-brand-darker">
         <Image
           src={project.image}
@@ -164,59 +165,71 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-brand-darker" />
 
         <div className="relative z-10 max-w-6xl mx-auto w-full">
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Moje prace
-          </p>
+          <RevealSection>
+            <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
+              Moje prace
+            </p>
 
-          <h1 className="text-5xl lg:text-6xl font-bold text-brand-text">
-            Projekty &{" "}
-            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-              Realizacje
-            </span>
-          </h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-brand-text">
+              Projekty &{" "}
+              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
+                Realizacje
+              </span>
+            </h1>
+          </RevealSection>
         </div>
       </section>
 
       <div className="max-w-6xl mx-auto px-6 flex flex-col gap-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-8">
-              Moja droga
-            </p>
+        <RevealSection>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-8">
+                Moja droga
+              </p>
 
-            {TIMELINE.map((item, i) => (
-              <TimelineItem
-                key={item.year}
-                {...item}
-                inLast={i === TIMELINE.length - 1}
-              />
-            ))}
+              {TIMELINE.map((item, i) => (
+                <RevealSection key={item.year} custom={i * 0.1}>
+                  <TimelineItem
+                    key={item.year}
+                    {...item}
+                    inLast={i === TIMELINE.length - 1}
+                  />
+                </RevealSection>
+              ))}
+            </div>
+
+            <div>
+              <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-8">
+                Technologie
+              </p>
+
+              <div className="grid grid-cols-2 gap-3">
+                {STACKS.map((stack, i) => (
+                  <RevealSection key={stack.name} custom={i * 0.3}>
+                    <StackBadge key={stack.name} {...stack} />
+                  </RevealSection>
+                ))}
+              </div>
+            </div>
           </div>
+        </RevealSection>
 
+        <RevealSection>
           <div>
             <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-8">
-              Technologie
+              Realizacje
             </p>
 
-            <div className="grid grid-cols-2 gap-3">
-              {STACKS.map((stack) => (
-                <StackBadge key={stack.name} {...stack} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+              {PROJECTS.map((project, i) => (
+                <RevealSection key={project.slug} custom={i * 0.1}>
+                  <ProjectCard key={project.slug} project={project} />
+                </RevealSection>
               ))}
             </div>
           </div>
-        </div>
-
-        <div>
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-8">
-            Realizacje
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROJECTS.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
-        </div>
+        </RevealSection>
       </div>
     </main>
   );

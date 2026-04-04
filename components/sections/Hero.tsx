@@ -11,14 +11,14 @@ import avatarImage from "@/public/me.webp";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full h-screen flex items-center justify-center">
       <Image
         src={heroImage}
         alt="Hero background"
-        className="object-cover"
         fill
-        sizes="100vw"
         priority
+        sizes="100vw"
+        className="object-cover"
       />
 
       <div className="absolute inset-0 bg-linear-to-r from-[#060910]/80 via-[#060910]/40 to-transparent z-10" />
@@ -29,7 +29,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 text-center lg:text-left"
           >
             <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase">
               Cześć, jestem
@@ -46,14 +46,14 @@ export default function Hero() {
               Front-end Developer
             </h2>
 
-            <div className="w-16 h-0.5 bg-linear-to-r from-brand-cyan to-brand-purple" />
+            <div className="w-16 h-0.5 bg-linear-to-r from-brand-cyan to-brand-purple mx-auto lg:mx-0" />
 
             <p className="text-brand-muted text-base leading-relaxed max-w-md">
               Tworzę szybkie, nowoczesne aplikacje webowe z naciskiem na UX i
               performance.
             </p>
 
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex justify-center lg:justify-normal items-center gap-4 pt-2">
               <Link
                 href="/projects"
                 className="px-6 py-3 rounded-lg bg-linear-to-r from-brand-cyan to-brand-purple text-[#060910] font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity duration-300"

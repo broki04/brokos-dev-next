@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
+
 import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import FooterLazy from "@/components/lazy/FooterLazy";
 import { NAV_LINKS } from "@/data/nav";
+import RevealSection from "@/components/ui/RevealSection";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -34,8 +36,12 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Navbar NAV_LINKS={NAV_LINKS} />
+
         {children}
-        <Footer />
+
+        <RevealSection className="bg-brand-darker">
+          <FooterLazy />
+        </RevealSection>
       </body>
     </html>
   );

@@ -3,10 +3,7 @@ import SkillsLazy from "@/components/lazy/SkillsLazy";
 import Hero from "@/components/sections/Hero";
 import Pricing from "@/components/sections/Pricing";
 import Services from "@/components/sections/Services";
-
-/* 
-  TODO: lazy loading (services, pricing, skills, contact), animacje z framer-motion, loading przy scrollu
-*/
+import RevealSection from "@/components/ui/RevealSection";
 
 export default function Home() {
   return (
@@ -14,10 +11,21 @@ export default function Home() {
       <Hero />
 
       <main className="bg-brand-darker min-h-screen text-brand-text flex flex-col gap-1">
-        <Services />
-        <Pricing />
-        <SkillsLazy />
-        <ContactLazy />
+        <RevealSection>
+          <Services />
+        </RevealSection>
+
+        <RevealSection>
+          <Pricing />
+        </RevealSection>
+
+        <RevealSection>
+          <SkillsLazy />
+        </RevealSection>
+
+        <RevealSection>
+          <ContactLazy />
+        </RevealSection>
       </main>
     </div>
   );

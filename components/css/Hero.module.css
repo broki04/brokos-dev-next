@@ -1,5 +1,9 @@
 .photo-wrapper {
   position: relative;
+  transition: transform 0.3s ease;
+}
+.photo-wrapper:hover {
+  transform: scale(1.03);
 }
 
 .spinning__ring__inner,

@@ -6,6 +6,7 @@ import heroImage from "@/public/hero-bg.svg";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { SiGithub } from "react-icons/si";
+import RevealSection from "@/components/ui/RevealSection";
 
 export default async function ProjectPage({
   params,
@@ -36,34 +37,36 @@ export default async function ProjectPage({
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-brand-darker" />
 
         <div className="relative z-10 max-w-6xl mx-auto w-full">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-brand-muted text-sm hover:text-brand-cyan transition-colors duration-200 mb-6"
-          >
-            <ArrowLeft size={14} />
-            Wróc do projektów
-          </Link>
+          <RevealSection>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 text-brand-muted text-sm hover:text-brand-cyan transition-colors duration-200 mb-6"
+            >
+              <ArrowLeft size={14} />
+              Wróc do projektów
+            </Link>
 
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            {project.tech.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-mono px-2 py-0.5 rounded-md bg-brand-surface text-brand-muted"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              {project.tech.map((tag) => (
+                <span
+                  key={tag}
+                  className="text-xs font-mono px-2 py-0.5 rounded-md bg-brand-surface text-brand-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-          <h1 className="text-5xl lg:text-6xl font-bold text-brand-text">
-            {project.title}
-          </h1>
+            <h1 className="text-5xl lg:text-6xl font-bold text-brand-text">
+              {project.title}
+            </h1>
+          </RevealSection>
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-6 pt-12 flex flex-col gap-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="flex flex-col gap-6">
+      <div className="max-w-6xl mx-auto px-6 pt-4 flex flex-col gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          <RevealSection className="flex flex-col gap-6">
             <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase">
               O projekcie
             </p>
@@ -110,18 +113,22 @@ export default async function ProjectPage({
                 </a>
               )}
             </div>
-          </div>
+          </RevealSection>
 
-          <div className="relative rounded-2xl overflow-hidden border border-brand-surface aspect-video">
-            <Image
-              src={project.image}
-              alt={project.title}
-              className="object-cover"
-              fill
-              sizes="50vw"
-            />
-          </div>
+          <RevealSection custom={0.15}>
+            <div className="relative rounded-2xl overflow-hidden border border-brand-surface aspect-video">
+              <Image
+                src={project.image}
+                alt={project.title}
+                className="object-cover"
+                fill
+                sizes="50vw"
+              />
+            </div>
+          </RevealSection>
+        </div>
 
+        <RevealSection>
           <div className="grid grid-cols-2 gap-4 pt-8 border-t border-brand-surface">
             {prev ? (
               <Link
@@ -155,7 +162,7 @@ export default async function ProjectPage({
               <div />
             )}
           </div>
-        </div>
+        </RevealSection>
       </div>
     </main>
   );
