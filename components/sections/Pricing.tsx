@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { PRICING, ADDONS } from "../data/pricing";
+import { PRICING, ADDONS } from "@/data/pricing";
 
 export default function Pricing() {
   return (
@@ -7,7 +7,7 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Transparentne ceny
+            Cennik wg. usługi
           </p>
           <h2 className="text-4xl font-bold text-brand-text">Cennik</h2>
         </div>
@@ -24,7 +24,7 @@ export default function Pricing() {
             const btnClass = clsx(
               "mt-auto text-center text-sm font-semibold py-2.5 rounded-lg transition-all duration-200",
               plan.accent
-                ? "hover:scale-[1.03] bg-linear-to-r from-brand-cyan to-brand-purple text-[#060910] hover:opacity-90"
+                ? "hover:scale-[1.03] bg-linear-to-r from-brand-cyan to-brand-purple text-brand-dark hover:opacity-90"
                 : "border border-brand-surface text-brand-muted hover:border-brand-cyan hover:text-brand-text",
             );
 
@@ -40,7 +40,7 @@ export default function Pricing() {
                   {plan.name}
                 </h3>
 
-                <p className="text-[#475569] text-xs leading-relaxed">
+                <p className="text-brand-subtle text-xs leading-relaxed">
                   {plan.desc}
                 </p>
 

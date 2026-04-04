@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SERVICES } from "../data/services";
+import { SERVICES } from "@/data/services";
 
 export default function Services() {
   return (

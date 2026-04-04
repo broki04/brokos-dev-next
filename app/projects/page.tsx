@@ -117,13 +117,12 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="absolute inset-0 bg-brand-darker/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
           {project.href && project.href !== "#" && (
             <a
-              href={project.href}
-              target="_blank"
+              href={`/projects/${project.slug}`}
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-cyan text-brand-darker text-sm font-semibold hover:opacity-90 transition-opacity"
             >
               <ExternalLink size={14} />
-              Live
+              Sprawdź
             </a>
           )}
         </div>

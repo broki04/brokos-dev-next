@@ -1,5 +1,5 @@
-import { SOCIAL_LINKS } from "@/data/socialLinks";
-import { NAV_LINKS } from "../data/navLinks";
+import { SOCIAL_LINKS } from "@/data/socials";
+import { NAV_LINKS } from "../../data/nav";
 
 export default function Footer() {
   return (

@@ -2,13 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-import styles from "./Navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { NavLink } from "@/data/navLinks";
+import { NavLink } from "@/data/nav";
 import { ChevronDown, X, Menu } from "lucide-react";
-import { SOCIAL_LINKS } from "@/data/socialLinks";
+import { SOCIAL_LINKS } from "@/data/socials";
 
 interface NavbarProps {
   NAV_LINKS: NavLink[];
@@ -37,12 +36,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
   const isActive = (href: string) => href === pathname;
   return (
     <>
-      <nav
-        className={[
-          styles.navbar,
-          "fixed top-0 left-0 w-full z-50 transition-all duration-300 md:bg-brand-dark/90 backdrop-blur-md",
-        ].join(" ")}
-      >
+      <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 md:bg-brand-dark/90 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-8 py-4 font-sans">
           <h1
             className={`${menuOpen ? "hidden" : ""} text-2xl font-bold tracking-light flex items-center gap-1 md:block`}
@@ -66,11 +60,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
                 <Link
                   key={`${link.href}-${index}`}
                   href={link.href}
-                  className={`${styles.nav__link} flex items-center gap-1 transition-colors duration-300 ${
-                    isActive(link.href)
-                      ? "text-brand-cyan"
-                      : "text-brand-muted hover:text-brand-text"
-                  }`}
+                  className="flex items-center gap-1 transition-colors duration-300 text-brand-text hover:text-brand-muted"
                 >
                   {link.label}
                   {link.dropdown && (

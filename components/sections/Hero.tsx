@@ -1,10 +1,13 @@
-import styles from "./Hero.module.css";
+"use client";
+
+import styles from "@/components/css/Hero.module.css";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import heroImage from "@/public/hero-bg.svg";
-import avatarImage from "@/public/me.jpg";
+import avatarImage from "@/public/me.webp";
 
 export default function Hero() {
   return (
@@ -15,7 +18,6 @@ export default function Hero() {
         className="object-cover"
         fill
         sizes="100vw"
-        loading="eager"
         priority
       />
 
@@ -23,7 +25,12 @@ export default function Hero() {
 
       <div className="relative z-20 max-w-6xl mx-auto px-6 h-full flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-          <div className="flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-6"
+          >
             <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase">
               Cześć, jestem
             </p>
@@ -42,10 +49,8 @@ export default function Hero() {
             <div className="w-16 h-0.5 bg-linear-to-r from-brand-cyan to-brand-purple" />
 
             <p className="text-brand-muted text-base leading-relaxed max-w-md">
-              Tworzę nowoczesne, responsywne aplikacje webowe z dbałością o
-              każdy detal. Łącze techniczne umiejętności z dbałością o
-              doświadczenie użytkownika, tworząc interfejsy, które wyróżniają
-              się na tle konkurencji.
+              Tworzę szybkie, nowoczesne aplikacje webowe z naciskiem na UX i
+              performance.
             </p>
 
             <div className="flex items-center gap-4 pt-2">
@@ -53,19 +58,24 @@ export default function Hero() {
                 href="/projects"
                 className="px-6 py-3 rounded-lg bg-linear-to-r from-brand-cyan to-brand-purple text-[#060910] font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity duration-300"
               >
-                Zobacz wszystkie projekty →
+                Zobacz projekty
               </Link>
 
               <a
                 href="#contact"
                 className="px-6 py-3 rounded-lg border border-brand-surface text-brand-muted font-semibold text-sm tracking-wide hover:border-brand-cyan hover:text-brand-text transition-all duration-300"
               >
-                Skontaktuj się
+                Kontakt
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hidden lg:flex justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="hidden lg:flex justify-center items-center"
+          >
             <div
               className={`${styles.photo__wrapper} relative flex items-center justify-center`}
             >
@@ -76,9 +86,9 @@ export default function Hero() {
                   <Image
                     src={avatarImage}
                     alt="photo"
-                    sizes="50vw"
-                    loading="eager"
                     fill
+                    priority
+                    sizes="(max-width: 1024px) 0px, 320px"
                     className="object-cover"
                   />
                 </div>
@@ -91,7 +101,7 @@ export default function Hero() {
                 className={`${styles.spinning__ring__outer} absolute -inset-6 rounded-full`}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

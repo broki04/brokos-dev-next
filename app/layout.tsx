@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer";
-import { NAV_LINKS } from "@/data/navLinks";
+import Navbar from "@/components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
+import { NAV_LINKS } from "@/data/nav";
 
 const inter = Inter({
   variable: "--font-sans",

@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "live",
   },
   {
@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "wip",
   },
   {
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "archived",
   },
   {
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "wip",
   },
   {
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "wip",
   },
   {
@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "wip",
   },
   {
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "wip",
   },
   {
@@ -96,7 +96,7 @@ export const PROJECTS: Project[] = [
     tech: ["React", "Next.JS", "Tailwind CSS"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
-    image: "/code-preview.png",
+    image: "/code-preview.webp",
     status: "wip",
   },
 ];
