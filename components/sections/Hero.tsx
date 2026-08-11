@@ -52,7 +52,7 @@ export default function Hero() {
               performance.
             </p>
 
-            <div className="items-center gap-4 pt-2">
+            <div className="flex items-center gap-2 pt-2">
               <Link
                 href="/projects"
                 className="px-6 py-3 rounded-lg bg-linear-to-r from-brand-cyan to-brand-purple text-[#060910] font-semibold text-sm tracking-wide hover:opacity-90 transition-opacity duration-300"
