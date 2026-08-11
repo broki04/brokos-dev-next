@@ -102,7 +102,7 @@ export default function Pricing() {
                     <span className="text-brand-text text-sm font-semibold">
                       {title}
                     </span>
-                    <span className="text-brand-cyan text-sm font-mono whitespace-nowrap">
+                    <span className="text-brand-cyan text-sm font-sans whitespace-nowrap">
                       {price}
                     </span>
                   </div>

@@ -1,5 +1,6 @@
 import ContactLazy from "@/components/lazy/ContactLazy";
 import SkillsLazy from "@/components/lazy/SkillsLazy";
+import TestimonialsLazy from "@/components/lazy/TestimonialsLazy";
 import Hero from "@/components/sections/Hero";
 import Pricing from "@/components/sections/Pricing";
 import Services from "@/components/sections/Services";
@@ -21,6 +22,10 @@ export default function Home() {
 
         <RevealSection>
           <SkillsLazy />
+        </RevealSection>
+
+        <RevealSection>
+          <TestimonialsLazy />
         </RevealSection>
 
         <RevealSection>
