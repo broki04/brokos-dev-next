@@ -7,7 +7,7 @@ export type Testimonial = {
   avatar: string;
 };
 
-export const TESTIMONIALS: Testimonial[] = [
+export const REVIEWS: Testimonial[] = [
   {
     id: 1,
     name: "Jan Kowalski",

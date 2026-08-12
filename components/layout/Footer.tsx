@@ -14,8 +14,8 @@ export default function Footer() {
           </a>
 
           <p className="text-brand-muted text-sm leading-relaxed max-w-xs">
-            Front-end developer tworzący nowoczesne strony i aplikacje webowe.
-            Dbam o każdy detal - od projektu po wdrożenie.
+            Full stack Developer developer tworzący nowoczesne strony i
+            aplikacje webowe. Dbam o każdy detal - od projektu po wdrożenie.
           </p>
 
           <div className="flex gap-3 mt-2">

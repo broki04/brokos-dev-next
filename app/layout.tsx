@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
 
-import Navbar from "@/components/sections/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import FooterLazy from "@/components/lazy/FooterLazy";
 import { NAV_LINKS } from "@/data/nav";
 import RevealSection from "@/components/ui/RevealSection";

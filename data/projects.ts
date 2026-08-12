@@ -12,112 +12,79 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    slug: "eco-shop",
-    title: "Eco Shop",
+    slug: "openmp-website",
+    title: "Strona internetowa serwera open.mp",
     description:
-      "Sklep online z ekologicznymi produktami, z koszykiem, filtrowaniem i integracją płatności.",
-    longDescription: `Eco Shop to w pełni funkcjonalny sklep internetowy z ekologicznymi produktami. 
-      Umożliwia dodawanie produktów do koszyka, filtrowanie według kategorii, a także integrację z systemami płatności online. 
-      Zadbano o responsywność, szybkie ładowanie i przejrzysty UX, aby użytkownik mógł łatwo przeglądać i kupować produkty.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
-    href: "https://www.github.com/broki04",
-    repo: "https://www.github.com/broki04",
-    image: "/code-preview.webp",
-    status: "live",
-  },
-  {
-    slug: "fitmeal-landing",
-    title: "FitMeal Landing",
-    description:
-      "Landing page dla cateringu dietetycznego z naciskiem na konwersję i przejrzysty UX.",
-    longDescription: `Strona FitMeal Landing to nowoczesny landing page dla cateringu dietetycznego. 
-      Skupia się na jasnej prezentacji oferty, szybkim ładowaniu i responsywnym designie. 
-      CTA są dobrze widoczne, co zwiększa współczynnik konwersji, a sekcje z menu, opiniami i formularzem kontaktowym są przejrzyście rozmieszczone.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
-    href: "https://www.github.com/broki04",
-    repo: "https://www.github.com/broki04",
-    image: "/code-preview.webp",
-    status: "wip",
-  },
-  {
-    slug: "movie-db",
-    title: "MovieDB",
-    description:
-      "Aplikacja do przeglądania filmów z zewnętrznego API, z wyszukiwarką i szczegółami filmów.",
-    longDescription: `MovieDB to aplikacja webowa korzystająca z zewnętrznego API filmowego, pozwalająca na przeglądanie filmów, 
-      wyszukiwanie według tytułu i przeglądanie szczegółowych informacji, takich jak opis, oceny czy trailer. 
-      Dzięki React i Next.js zapewniono szybkie ładowanie i płynne przechodzenie między stronami.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
-    href: "https://www.github.com/broki04",
-    repo: "https://www.github.com/broki04",
-    image: "/code-preview.webp",
-    status: "archived",
-  },
-  {
-    slug: "task-manager",
-    title: "Task Manager",
-    description:
-      "Aplikacja do zarządzania zadaniami z możliwością przepisywania statusów, terminów i priorytetów.",
-    longDescription: `Task Manager to aplikacja webowa pozwalająca użytkownikom tworzyć, edytować i usuwać zadania. 
-      Zadania mogą mieć różne statusy, priorytety i terminy realizacji. 
-      Interfejs jest intuicyjny, z możliwością filtrowania i sortowania, a backend zapewnia trwałość danych.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
+      "Kompletna strona serwera open.mp — konto gracza, sklep z VIP-ami, statystyki, gangi, prace i panel administracyjny.",
+    longDescription: `Strona internetowa serwera open.mp to flagowy projekt zbudowany na potrzeby własnego serwera, łączący funkcje dla graczy, sklep i panel administracyjny w jednym systemie.
+      Zalogowany gracz może zarządzać swoim kontem z poziomu strony (dane postaci, ustawienia, ekwipunek), sprawdzić, kto jest aktualnie online, przeglądać dostępne gangi i prace na serwerze,
+      a także swoje statystyki, rekordy na poszczególnych zabawach i arenach oraz zdobyte osiągnięcia.
+      Sklep pozwala na zakup pakietów VIP i innych dodatków z realną (testową) płatnością online, automatycznym nadaniem uprawnień na koncie oraz historią zamówień.
+      Od strony administracyjnej dostępny jest panel pozwalający monitorować graczy w czasie rzeczywistym (WebSockety), przeglądać logi moderacji, nakładać bany i kicki
+      oraz śledzić statystyki aktywności serwera na interaktywnych wykresach (godziny szczytu, liczba graczy w czasie).
+      System ról (gracz / moderator / admin) zapewnia różny poziom dostępu do funkcji strony.
+      Dane pobierane są z bazy MySQL zasilanej bezpośrednio przez serwer gry, co pokazuje pracę na realnym, produkcyjnym źródle danych.`,
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "MySQL",
+      "Socket.io",
+      "NextAuth",
+      "Stripe",
+      "Recharts",
+    ],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
     image: "/code-preview.webp",
     status: "wip",
   },
   {
-    slug: "travel-guide",
-    title: "Travel Guide",
+    slug: "saas-billing",
+    title: "System subskrypcji (SaaS)",
     description:
-      "Serwis podróżniczy z przewodnikami, mapami i rekomendacjami atrakcji w różnych miastach.",
-    longDescription: `Travel Guide to interaktywny serwis dla podróżników, oferujący przewodniki po miastach, rekomendacje atrakcji, 
-      mapy i wskazówki dotyczące transportu i lokalnej kuchni. Użytkownik może wyszukiwać miejsca według kategorii i lokalizacji, 
-      a responsywny design umożliwia wygodne korzystanie na telefonach i tabletach.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
+      "Pełny flow produktu SaaS — rejestracja, subskrypcje i płatności testowe przez Stripe.",
+    longDescription: `Projekt SaaS z płatnościami odwzorowuje pełny cykl życia produktu subskrypcyjnego, jaki spotyka się w realnych firmach.
+      Obejmuje rejestrację i logowanie użytkowników (NextAuth), wybór planu free lub pro z integracją płatności Stripe w trybie testowym,
+      dashboard użytkownika z limitami zależnymi od wykupionego planu oraz historię i panel rozliczeń.
+      Celem projektu jest pokazanie, że potrafię zbudować nie tylko interfejs, ale kompletny, działający produkt z logiką biznesową i obsługą płatności.`,
+    tech: [
+      "Next.js",
+      "NextAuth",
+      "Stripe",
+      "Prisma",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
     image: "/code-preview.webp",
     status: "wip",
   },
   {
-    slug: "blog-platform",
-    title: "Blog Platform",
+    slug: "public-api-docs",
+    title: "REST API + dokumentacja dla developerów",
     description:
-      "Platforma blogowa z możliwością dodawania postów, komentarzy i systemem logowania użytkowników.",
-    longDescription: `Blog Platform to pełnoprawna platforma do publikacji artykułów, z możliwością dodawania postów, komentowania i logowania użytkowników. 
-      System zarządzania treścią pozwala na łatwe edytowanie postów, moderowanie komentarzy i personalizację profilu użytkownika. 
-      Całość działa w SPA, co daje płynne przechodzenie między stronami.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
+      "Własne REST API z kluczami dostępu, rate limitingiem i interaktywną dokumentacją.",
+    longDescription: `Publiczne API to projekt czysto backendowy, pokazujący projektowanie interfejsu programistycznego od strony twórcy, a nie tylko konsumenta.
+      API udostępnia dane w formacie REST z pełnym wersjonowaniem, systemem kluczy dostępowych i limitowaniem liczby zapytań (rate limiting) dla każdego klienta.
+      Do projektu dołączona jest interaktywna dokumentacja w stylu Stripe Docs, umożliwiająca testowanie zapytań bezpośrednio z przeglądarki.
+      Projekt kładzie nacisk na dobre praktyki API — spójne odpowiedzi błędów, autoryzację i czytelną strukturę endpointów.`,
+    tech: ["Node.js", "NestJS", "PostgreSQL", "Redis", "OpenAPI / Swagger"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
     image: "/code-preview.webp",
     status: "wip",
   },
   {
-    slug: "crypto-dashboard",
-    title: "Crypto Dashboard",
+    slug: "nova-landing",
+    title: 'Landing "Nova"',
     description:
-      "Panel do śledzenia kursów kryptowalut w czasie rzeczywistym z wykresami i alertami cenowymi.",
-    longDescription: `Crypto Dashboard to aplikacja do monitorowania kursów kryptowalut w czasie rzeczywistym. 
-      Oferuje dynamiczne wykresy, alerty cenowe i filtrowanie według kryptowaluty lub giełdy. 
-      Backend API zapewnia aktualne dane, a frontend z React i Tailwind gwarantuje płynne i responsywne doświadczenie użytkownika.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
-    href: "https://www.github.com/broki04",
-    repo: "https://www.github.com/broki04",
-    image: "/code-preview.webp",
-    status: "wip",
-  },
-  {
-    slug: "crm-flow",
-    title: "CRM Flow",
-    description:
-      "Panel webowy do obsługi leadów sprzedażowych, statusów kontaktu i raportów.",
-    longDescription: `CRM Flow to panel webowy dla zespołów sprzedażowych, umożliwiający zarządzanie leadami, 
-      śledzenie statusów kontaktu, przypisywanie zadań i generowanie raportów. 
-      Aplikacja jest responsywna i umożliwia szybki dostęp do najważniejszych danych sprzedażowych.`,
-    tech: ["React", "Next.JS", "Tailwind CSS"],
+      "Minimalistyczny landing page fikcyjnego produktu premium, z animacjami w stylu Apple.",
+    longDescription: `Landing "Nova" to projekt czysto frontendowy, będący popisem animacji i dopracowanego designu w stylu stron produktowych Apple.
+      Strona reklamuje fikcyjny produkt premium (bezprzewodowe słuchawki) z sekcją hero z animowanym produktem, sticky product reveal reagującym na scroll,
+      interaktywnym wyborem koloru produktu oraz formularzem preorder z podpięciem pod backend.
+      Szczególny nacisk położono na wydajność — animacje ograniczone do transform/opacity, wsparcie dla prefers-reduced-motion i wynik Lighthouse 90+ mimo bogatej warstwy wizualnej.`,
+    tech: ["Next.js", "Tailwind CSS", "SASS", "Framer Motion"],
     href: "https://www.github.com/broki04",
     repo: "https://www.github.com/broki04",
     image: "/code-preview.webp",

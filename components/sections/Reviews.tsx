@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import RevealSection from "../ui/RevealSection";
-import { TESTIMONIALS } from "@/data/testimonials";
+import { REVIEWS } from "@/data/reviews";
 import Image from "next/image";
 
-export default function Testimonials() {
+export default function Reviews() {
   return (
     <section
-      id="testimonials"
+      id="reviews"
       className="py-24 px-6 bg-brand-darker text-brand-text"
     >
       <div className="max-w-6xl mx-auto">
@@ -33,11 +33,11 @@ export default function Testimonials() {
             animate={{ x: ["0%", "-100%"] }}
             transition={{
               repeat: Infinity,
-              duration: TESTIMONIALS.length * 0.8,
+              duration: REVIEWS.length * 0.8,
               ease: "linear",
             }}
           >
-            {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+            {[...REVIEWS, ...REVIEWS].map((t, i) => (
               <div
                 key={i}
                 className="bg-brand-dark/40 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center min-w-70 shadow-lg"
@@ -48,6 +48,7 @@ export default function Testimonials() {
                     src={t.avatar}
                     alt={t.name}
                     fill
+                    sizes="80px"
                     className="relative w-20 h-20 rounded-full objectr-cover z-10 border-2 border-brand-cyan/30"
                     loading="lazy"
                   />

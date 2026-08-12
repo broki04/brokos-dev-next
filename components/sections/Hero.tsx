@@ -42,7 +42,7 @@ export default function Hero() {
             </h1>
 
             <h2 className="text-xl lg:text-2xl font-medium text-brand-muted">
-              Front-end Developer
+              Full-stack Developer
             </h2>
 
             <div className="w-16 h-0.5 bg-linear-to-r from-brand-cyan to-brand-purple" />

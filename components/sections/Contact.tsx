@@ -60,8 +60,8 @@ export default function Contact() {
             </h2>
 
             <p className="mt-4 text-brand-muted text-sm leading-relaxed max-w-lg">
-              Szukasz frontend developera? Chętnie pomogę w realizacji projektu
-              lub dołączę do zespołu.
+              Szukasz full stack developera? Chętnie pomogę w realizacji
+              projektu lub dołączę do zespołu.
             </p>
           </div>
 
