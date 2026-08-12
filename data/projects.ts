@@ -13,7 +13,7 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     slug: "openmp-website",
-    title: "Strona internetowa serwera open.mp",
+    title: "Serwer open.mp",
     description:
       "Kompletna strona serwera open.mp — konto gracza, sklep z VIP-ami, statystyki, gangi, prace i panel administracyjny.",
     longDescription: `Strona internetowa serwera open.mp to flagowy projekt zbudowany na potrzeby własnego serwera, łączący funkcje dla graczy, sklep i panel administracyjny w jednym systemie.
@@ -62,7 +62,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "public-api-docs",
-    title: "REST API + dokumentacja dla developerów",
+    title: "REST API + docs",
     description:
       "Własne REST API z kluczami dostępu, rate limitingiem i interaktywną dokumentacją.",
     longDescription: `Publiczne API to projekt czysto backendowy, pokazujący projektowanie interfejsu programistycznego od strony twórcy, a nie tylko konsumenta.
