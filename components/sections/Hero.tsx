@@ -48,8 +48,8 @@ export default function Hero() {
             <div className="w-16 h-0.5 bg-linear-to-r from-brand-cyan to-brand-purple" />
 
             <p className="text-brand-muted text-base leading-relaxed max-w-md">
-              Tworzę szybkie, nowoczesne aplikacje webowe z naciskiem na UX i
-              performance.
+              Buduję kompletne aplikacje webowe — od responsywnego frontendu,
+              przez logikę backendu, po bazy danych i integracje API.
             </p>
 
             <div className="flex items-center gap-2 pt-2">

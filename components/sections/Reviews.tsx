@@ -29,18 +29,18 @@ export default function Reviews() {
 
         <div className="overflow-hidden">
           <motion.div
-            className="flex gap-8 w-2xs"
-            animate={{ x: ["0%", "-100%"] }}
+            className="flex gap-8 w-max"
+            animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
-              duration: REVIEWS.length * 0.8,
+              duration: REVIEWS.length * 4,
               ease: "linear",
             }}
           >
             {[...REVIEWS, ...REVIEWS].map((t, i) => (
               <div
                 key={i}
-                className="bg-brand-dark/40 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center min-w-70 shadow-lg"
+                className="bg-brand-dark/40 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center w-2xs shrink-0 shadow-lg"
               >
                 <div className="relative w-20 h-20 mb-4">
                   <div className="absolute inset-0 rounded-full bg-linear-to-br from-brand-cyan/30 to-brand-purple/30 blur-2xl scale-110" />
@@ -49,7 +49,7 @@ export default function Reviews() {
                     alt={t.name}
                     fill
                     sizes="80px"
-                    className="relative w-20 h-20 rounded-full objectr-cover z-10 border-2 border-brand-cyan/30"
+                    className="relative w-20 h-20 rounded-full object-cover z-10 border-2 border-brand-cyan/30"
                     loading="lazy"
                   />
                 </div>
