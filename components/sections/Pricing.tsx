@@ -45,13 +45,7 @@ export default function Pricing() {
                 </p>
 
                 <div className="text-2xl font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent leading-tight pt-2">
-                  {plan.price === "Wycena indywidualna" ? (
-                    <>
-                      Wycena <br /> indywidualna
-                    </>
-                  ) : (
-                    plan.price
-                  )}
+                  {plan.price}
                 </div>
 
                 <div className="w-full h-px bg-brand-surface mt-2" />
