@@ -24,15 +24,7 @@ export const PROJECTS: Project[] = [
       oraz śledzić statystyki aktywności serwera na interaktywnych wykresach (godziny szczytu, liczba graczy w czasie).
       System ról (gracz / moderator / admin) zapewnia różny poziom dostępu do funkcji strony.
       Dane pobierane są z bazy MySQL zasilanej bezpośrednio przez serwer gry, co pokazuje pracę na realnym, produkcyjnym źródle danych.`,
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "MySQL",
-      "Socket.io",
-      "NextAuth",
-      "Stripe",
-      "Recharts",
-    ],
+    tech: ["Next.js", "TypeScript", "MySQL", "Stripe", "Recharts"],
     href: "https://elitaserver.vercel.app",
     repo: "https://github.com/broki04/sigma-website",
     image: "/elita-preview.webp",
