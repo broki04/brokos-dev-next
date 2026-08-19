@@ -33,9 +33,9 @@ export const PROJECTS: Project[] = [
       "Stripe",
       "Recharts",
     ],
-    href: "https://www.github.com/broki04",
-    repo: "https://www.github.com/broki04",
-    image: "/code-preview.webp",
+    href: "https://elitaserver.vercel.app",
+    repo: "https://github.com/broki04/sigma-website",
+    image: "/elita-preview.webp",
     status: "wip",
   },
   {
