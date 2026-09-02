@@ -4,7 +4,7 @@ import { PRICING, ADDONS } from "@/data/pricing";
 export default function Pricing() {
   return (
     <section id="prices" className="pb-24 px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
             Cennik wg. usługi
@@ -12,17 +12,17 @@ export default function Pricing() {
           <h2 className="text-4xl font-bold text-brand-text">Cennik</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-5 gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
           {PRICING.map((plan) => {
             const cardClass = clsx(
-              "relative rounded-2xl p-6 flex flex-col h-full border transition-all duration-300 hover:-translate-y-1",
+              "relative rounded-2xl p-5 flex flex-col h-full border transition-all duration-300 hover:-translate-y-1",
               plan.accent
                 ? "hover:scale-[1.02] shadow-[0_0_30px_rgba(34,211,238,0.15)] border-brand-cyan/40 bg-linear-to-b from-brand-cyan/10 to-brand-purple/5"
                 : "border-brand-surface bg-brand-dark hover:border-brand-subtle",
             );
 
             const btnClass = clsx(
-              "mt-auto text-center text-sm font-semibold py-2.5 rounded-lg transition-all duration-200",
+              "mt-auto text-center text-xs sm:text-sm font-semibold py-2.5 rounded-lg transition-all duration-200",
               plan.accent
                 ? "hover:scale-[1.03] bg-linear-to-r from-brand-cyan to-brand-purple text-brand-dark hover:opacity-90"
                 : "border border-brand-surface text-brand-muted hover:border-brand-cyan hover:text-brand-text",
@@ -31,12 +31,12 @@ export default function Pricing() {
             return (
               <div key={plan.name} className={cardClass}>
                 {plan.accent && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-mono tracking-[2px] uppercase bg-linear-to-r from-brand-cyan to-brand-purple text-[#060910] px-3 py-1 rounded-full font-semibold whitespace-nowrap">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-mono tracking-[2px] uppercase bg-linear-to-r from-brand-cyan to-brand-purple text-[#060910] px-3 py-1 rounded-full font-semibold whitespace-nowrap">
                     Popularne
                   </div>
                 )}
 
-                <h3 className="text-white font-bold text-lg leading-tight mb-1 whitespace-nowrap">
+                <h3 className="text-white font-bold text-base leading-tight mb-1">
                   {plan.name}
                 </h3>
 
@@ -44,7 +44,7 @@ export default function Pricing() {
                   {plan.desc}
                 </p>
 
-                <div className="text-2xl font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent leading-tight pt-2">
+                <div className="text-lg font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent leading-tight pt-2">
                   {plan.price}
                 </div>
 
@@ -54,7 +54,7 @@ export default function Pricing() {
                   {plan.features.map((f) => (
                     <li
                       key={f}
-                      className="flex items-start gap-2 text-brand-muted text-sm"
+                      className="flex items-start gap-2 text-brand-muted text-xs sm:text-sm"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan shrink-0 mt-1.5" />
                       {f}

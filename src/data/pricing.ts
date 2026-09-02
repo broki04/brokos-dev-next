@@ -34,13 +34,13 @@ export const PRICING = [
       "Galeria lub portfolio",
       "Blog/aktualności",
       "Responsywność",
-      "Formularze kontaktowe",
+      "Formularz kontaktowy",
     ],
     accent: false,
   },
   {
     name: "Sklep internetowy",
-    price: "5000-12000 zł",
+    price: "5000-9000 zł",
     desc: "Pełny sklep e-commerce z płatnościami",
     features: [
       "CMS (zarządzanie treścią)",
@@ -48,7 +48,7 @@ export const PRICING = [
       "Płatność online",
       "Responsywność i animacje",
     ],
-    accent: true,
+    accent: false,
   },
   {
     name: "Aplikacja webowa",
@@ -101,7 +101,7 @@ export const ADDONS = [
   {
     icon: "📈",
     title: "Pozycjonowanie SEO",
-    price: "800zł / mies.",
+    price: "800 zł / mies.",
     description:
       "Audyt, optymalizacja treści, link building i miesięczny raport.",
   },

@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Loader from "../ui/Loader";
 
-const Contact = dynamic(() => import("../sections/Contact"), {
+const Contact = dynamic(() => import("./Contact"), {
   loading: () => <Loader />,
   ssr: false,
 });

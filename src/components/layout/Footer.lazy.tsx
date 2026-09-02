@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Loader from "../ui/Loader";
 
-const Footer = dynamic(() => import("../layout/Footer"), {
+const Footer = dynamic(() => import("./Footer"), {
   loading: () => <Loader />,
 });
 

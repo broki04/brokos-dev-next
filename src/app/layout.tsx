@@ -4,7 +4,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
-import FooterLazy from "@/components/lazy/FooterLazy";
+import FooterLazy from "@/components/layout/Footer.lazy";
 import { NAV_LINKS } from "@/data/nav";
 import RevealSection from "@/components/ui/RevealSection";
 import { SITE_URL } from "@/lib/site";
