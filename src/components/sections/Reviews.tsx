@@ -1,11 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import RevealSection from "../ui/RevealSection";
 import { REVIEWS } from "@/data/reviews";
 import Image from "next/image";
 
 export default function Reviews() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="reviews"
@@ -30,7 +32,7 @@ export default function Reviews() {
         <div className="overflow-hidden">
           <motion.div
             className="flex gap-8 w-max"
-            animate={{ x: ["0%", "-50%"] }}
+            animate={shouldReduceMotion ? undefined : { x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               duration: REVIEWS.length * 4,

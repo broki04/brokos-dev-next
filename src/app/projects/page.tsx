@@ -4,6 +4,13 @@ import RevealSection from "@/components/ui/RevealSection";
 import { ProjectTimeline } from "@/components/projects/ProjectTimeline";
 import { TechStack } from "@/components/projects/TechStack";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projekty",
+  description:
+    "Przegląd projektów i realizacji Mateusza Brokosa — aplikacje webowe zbudowane w Next.js, TypeScript i React.",
+};
 
 export default function ProjectsPage() {
   return (

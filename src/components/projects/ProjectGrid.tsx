@@ -12,7 +12,7 @@ export function ProjectGrid() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 auto-rows-fr">
         {PROJECTS.map((project, i) => (
           <RevealSection key={project.slug} custom={i * 0.1}>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} priority={i === 0} />
           </RevealSection>
         ))}
       </div>

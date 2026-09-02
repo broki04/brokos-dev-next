@@ -1,18 +1,51 @@
-import { PROJECTS } from "@/data/projects";
+import type { Metadata } from "next";
 import Image from "next/image";
+
+import { PROJECTS } from "@/data/projects";
 import { notFound } from "next/navigation";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { SiGithub } from "react-icons/si";
 
 import heroImage from "@/public/hero-bg.svg";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
-import { SiGithub } from "react-icons/si";
 import RevealSection from "@/components/ui/RevealSection";
 
-export default async function ProjectPage({
-  params,
-}: {
+type ProjectPageProps = {
   params: Promise<{ slug: string }>;
-}) {
+};
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = PROJECTS.find((p) => p.slug === slug);
+
+  if (!project) {
+    return { title: "Projekt nie znaleziony" };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      images: [{ url: project.image }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [project.image],
+    },
+  };
+}
+
+export function generateStaticParams() {
+  return PROJECTS.map((project) => ({ slug: project.slug }));
+}
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
 
   const project = PROJECTS.find((p) => p.slug === slug);

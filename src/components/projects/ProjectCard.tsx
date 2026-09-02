@@ -2,7 +2,13 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import type { Project } from "@/data/projects";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  priority = false,
+}: {
+  project: Project;
+  priority?: boolean;
+}) {
   return (
     <div className="group flex flex-col h-full rounded-2xl border border-brand-surface bg-brand-dark overflow-hidden hover:border-brand-subtle transition-all duration-300 hover:-translate-y-1">
       <div className="relative aspect-4/3 overflow-hidden bg-brand-darker">
@@ -11,8 +17,8 @@ export function ProjectCard({ project }: { project: Project }) {
           alt={project.title}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           fill
-          sizes="50vw"
-          priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priority}
         />
         <div className="absolute inset-0 bg-brand-darker/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           {project.href && project.href !== "#" && (
