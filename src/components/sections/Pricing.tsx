@@ -36,15 +36,15 @@ export default function Pricing() {
                   </div>
                 )}
 
-                <h3 className="text-white font-bold text-base leading-tight mb-1">
+                <h3 className="text-white font-bold text-base leading-tight mb-1 line-clamp-1">
                   {plan.name}
                 </h3>
 
-                <p className="text-brand-subtle text-xs leading-relaxed">
+                <p className="text-brand-subtle text-xs leading-relaxed line-clamp-2 min-h-10">
                   {plan.desc}
                 </p>
 
-                <div className="text-lg font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent leading-tight pt-2">
+                <div className="text-xl font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent leading-tight pt-3">
                   {plan.price}
                 </div>
 
