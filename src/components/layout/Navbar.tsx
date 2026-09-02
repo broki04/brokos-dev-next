@@ -33,7 +33,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isActive = (href: string) => href === pathname;
+  const isActive = (href: string) => href.split("#")[0] === pathname;
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 md:bg-brand-dark/90 backdrop-blur-md">

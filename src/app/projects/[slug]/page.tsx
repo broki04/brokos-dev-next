@@ -76,7 +76,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               className="inline-flex items-center gap-2 text-brand-muted text-sm hover:text-brand-cyan transition-colors duration-200 mb-6"
             >
               <ArrowLeft size={14} />
-              Wróc do projektów
+              Wróć do projektów
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-4">

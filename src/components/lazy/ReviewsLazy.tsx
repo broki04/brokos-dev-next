@@ -3,10 +3,10 @@
 import dynamic from "next/dynamic";
 import Loader from "../ui/Loader";
 
-const ReviewsLazy = dynamic(() => import("../sections/Reviews"), {
+const Reviews = dynamic(() => import("../sections/Reviews"), {
   loading: () => <Loader />,
 });
 
-export default function Reviews() {
-  return <ReviewsLazy />;
+export default function ReviewsLazy() {
+  return <Reviews />;
 }

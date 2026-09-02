@@ -14,12 +14,13 @@ export default function RevealSection({
   children,
   className = "",
   custom = 0,
+  threshold = 0.15,
 }: RevealSectionProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: threshold }}
       transition={{ duration: 0.6, ease: easeOut, delay: custom }}
       className={className}
     >
