@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 import { NavLink } from "@/data/nav";
 import { ChevronDown, X, Menu } from "lucide-react";
-import { SOCIAL_LINKS } from "@/data/socials";
 
 interface NavbarProps {
   NAV_LINKS: NavLink[];
@@ -37,7 +36,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 transition-all duration-300 md:bg-brand-dark/90 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-8 py-4 font-sans">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 font-sans">
           <h1
             className={`${menuOpen ? "hidden" : ""} text-2xl font-bold tracking-light flex items-center gap-1 md:block`}
           >
@@ -98,21 +97,6 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
             ))}
           </ul>
 
-          <ul className="hidden md:flex items-center space-x-4">
-            {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-brand-text hover:text-brand-cyan hover:scale-110 transition-all duration-300"
-              >
-                <Icon size={18} />
-              </a>
-            ))}
-          </ul>
-
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -170,21 +154,6 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
               )}
             </div>
           ))}
-
-          <div className="mt-auto flex gap-4">
-            {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-brand-text hover:text-brand-cyan"
-              >
-                <Icon size={20} />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </>

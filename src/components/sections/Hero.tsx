@@ -22,17 +22,18 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-linear-to-r from-[#060910]/80 via-[#060910]/40 to-transparent z-10" />
 
-      <div className="relative z-20 max-w-6xl mx-auto px-6 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 h-full flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-6"
           >
-            <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase">
+            <span className="inline-flex items-center gap-2 w-fit text-brand-cyan text-[13px] font-mono tracking-[3px] uppercase border border-brand-cyan/30 rounded-full px-3.5 py-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
               Cześć, jestem
-            </p>
+            </span>
 
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-brand-text">
               Mateusz{" "}
@@ -48,8 +49,9 @@ export default function Hero() {
             <div className="w-16 h-0.5 bg-linear-to-r from-brand-cyan to-brand-purple" />
 
             <p className="text-brand-muted text-base leading-relaxed max-w-md">
-              Buduję kompletne aplikacje webowe — od responsywnego frontendu,
-              przez logikę backendu, po bazy danych i integracje API.
+              Tworzę strony i aplikacje, które działają szybko, wyglądają
+              nowocześnie i realnie wspierają rozwój Twojego biznesu — od
+              pierwszego szkicu po wdrożenie.
             </p>
 
             <div className="flex items-center gap-2 pt-2">

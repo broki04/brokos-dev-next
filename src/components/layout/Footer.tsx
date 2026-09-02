@@ -1,10 +1,11 @@
 import { SOCIAL_LINKS } from "@/data/socials";
 import { NAV_LINKS } from "../../data/nav";
+import { SITE_MAIL } from "@/lib/site";
 
 export default function Footer() {
   return (
     <section className="bg-brand-dark border-t border-brand-surface px-6 py-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="flex flex-col gap-4">
           <a href="#" className="text-2xl font-bold tracking-tight">
             <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
@@ -62,10 +63,10 @@ export default function Footer() {
               Email
             </p>
             <a
-              href="mailto:mateusz.brokos1@gmail.com"
+              href={`mailto:${SITE_MAIL}`}
               className="text-brand-text text-sm hover:text-brand-cyan transition-colors duration-200"
             >
-              mateusz.brokos1@gmail.com
+              {SITE_MAIL}
             </a>
           </div>
 
@@ -83,7 +84,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-brand-surface flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-brand-surface flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-brand-subtle text-xs font-mono">
           &copy; 2026 brokosDev - wszelkie prawa zastrzeżone.
         </p>

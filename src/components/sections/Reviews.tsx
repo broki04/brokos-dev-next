@@ -13,7 +13,7 @@ export default function Reviews() {
       id="reviews"
       className="py-24 px-6 bg-brand-darker text-brand-text"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <RevealSection>
           <div className="mb-14">
             <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">

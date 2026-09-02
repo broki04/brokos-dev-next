@@ -1,5 +1,6 @@
 "use client";
 
+import { SITE_MAIL } from "@/lib/site";
 import { AlertCircle, CheckCircle2, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -45,57 +46,26 @@ export default function Contact() {
 
   return (
     <section id="contact" className="pt-14 pb-32 px-6 bg-brand-darker relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-12">
-          <div>
-            <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-              Porozmawiajmy
-            </p>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-10">
+          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
+            Porozmawiajmy
+          </p>
 
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-text">
-              Napisz do{" "}
-              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-                mnie
-              </span>
-            </h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-brand-text">
+            Napisz do{" "}
+            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
+              mnie
+            </span>
+          </h2>
 
-            <p className="mt-4 text-brand-muted text-sm leading-relaxed max-w-lg">
-              Szukasz full stack developera? Chętnie pomogę w realizacji
-              projektu lub dołączę do zespołu.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-8 lg:justify-self-end lg:w-full lg:max-w-sm">
-            <div className="mt-4">
-              <p className="text-brand-cyan text-xs font-mono tracking-[2px] uppercase mb-2">
-                Email
-              </p>
-              <a
-                href="mailto:mateusz.brokos1@gmail.com"
-                className="text-brand-text text-sm hover:text-brand-cyan transition-colors duration-200"
-              >
-                mateusz.brokos1@gmail.com
-              </a>
-            </div>
-
-            <div>
-              <p className="text-brand-cyan text-xs font-mono tracking-[2px] uppercase mb-2">
-                Discord
-              </p>
-              <a
-                href="https://discord.com/users/618507378333319196"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-brand-text text-sm hover:text-brand-cyan transition-colors duration-200"
-                aria-label="Profil Discord: brokikrul"
-              >
-                <MessageCircle size={16} />
-                brokikrul
-              </a>
-            </div>
-          </div>
+          <p className="mt-4 text-brand-muted text-sm leading-relaxed max-w-lg">
+            Szukasz full stack developera? Chętnie pomogę w realizacji
+            projektu lub dołączę do zespołu.
+          </p>
         </div>
-        <div className="lg:col-span-2 mt-6">
+
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-start">
           <form
             className="flex flex-col gap-4"
             onSubmit={handleSubmit}
@@ -241,6 +211,52 @@ export default function Contact() {
               </div>
             )}
           </form>
+
+          <div className="flex flex-col gap-6 border border-brand-surface rounded-2xl bg-brand-dark p-6 h-fit">
+            <div>
+              <p className="text-brand-cyan text-xs font-mono tracking-[2px] uppercase mb-2">
+                Email
+              </p>
+              <a
+                href={`mailto:${SITE_MAIL}`}
+                className="text-brand-text text-sm hover:text-brand-cyan transition-colors duration-200"
+              >
+                {SITE_MAIL}
+              </a>
+            </div>
+
+            <div className="w-full h-px bg-brand-surface" />
+
+            <div>
+              <p className="text-brand-cyan text-xs font-mono tracking-[2px] uppercase mb-2">
+                Discord
+              </p>
+              <a
+                href="https://discord.com/users/618507378333319196"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-brand-text text-sm hover:text-brand-cyan transition-colors duration-200"
+                aria-label="Profil Discord: brokikrul"
+              >
+                <MessageCircle size={16} />
+                brokikrul
+              </a>
+            </div>
+
+            <div className="w-full h-px bg-brand-surface" />
+
+            <div>
+              <p className="text-brand-muted text-xs font-mono tracking-[2px] uppercase mb-2">
+                Dostępność
+              </p>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-brand-muted text-sm">
+                  Otwarty na nowe projekty
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

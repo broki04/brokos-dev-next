@@ -3,7 +3,7 @@ import { PRICING, ADDONS } from "@/data/pricing";
 
 export default function Pricing() {
   return (
-    <section id="prices" className="pb-24 px-8">
+    <section id="prices" className="pb-8 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
@@ -70,12 +70,7 @@ export default function Pricing() {
           })}
         </div>
 
-        <p className="text-brand-subtle text-xs font-mono text-center mt-8 tracking-wide">
-          * Ceny są orientacyjne i zależą od zakresu projektu. Skontaktuj się po
-          bezpłatną wycenę.
-        </p>
-
-        <div className="mt-16">
+        <div className="mt-24">
           <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-2">
             Dodatkowe opcje
           </p>
@@ -108,6 +103,11 @@ export default function Pricing() {
               </div>
             ))}
           </div>
+
+          <p className="text-brand-subtle text-xs font-mono text-center mt-8 tracking-wide">
+            * Ceny są orientacyjne i zależą od zakresu projektu. Skontaktuj się
+            po bezpłatną wycenę.
+          </p>
         </div>
       </div>
     </section>

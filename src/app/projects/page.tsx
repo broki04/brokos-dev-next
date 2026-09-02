@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import heroImage from "@/public/hero-bg.svg";
 import RevealSection from "@/components/ui/RevealSection";
 import { ProjectTimeline } from "@/components/projects/ProjectTimeline";
-import { TechStack } from "@/components/projects/TechStack";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { Metadata } from "next";
 
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
         />
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-brand-darker" />
 
-        <div className="relative z-10 max-w-6xl mx-auto w-full">
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
           <RevealSection>
             <p className="text-brand-cyan text-[10px] sm:text-sm font-mono tracking-[3px] sm:tracking-[4px] uppercase mb-3 sm:mb-4">
               Moje prace
@@ -43,11 +43,39 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-12 sm:gap-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-12 sm:gap-24">
         <RevealSection>
           <div className="grid grid-cols-1 gap-10 sm:gap-16 lg:grid-cols-2">
             <ProjectTimeline />
-            <TechStack />
+
+            <div className="flex flex-col gap-4 rounded-2xl border border-brand-surface bg-brand-dark p-6 sm:p-8 h-fit">
+              <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase">
+                Współpraca
+              </p>
+
+              <h3 className="text-brand-text text-2xl font-bold">
+                Masz projekt na myśli?
+              </h3>
+
+              <p className="text-brand-muted text-sm leading-relaxed">
+                Chętnie pomogę w realizacji strony, sklepu lub aplikacji
+                webowej — od pierwszego szkicu po wdrożenie.
+              </p>
+
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="text-brand-muted text-sm">
+                  Otwarty na nowe projekty
+                </span>
+              </div>
+
+              <Link
+                href="/#contact"
+                className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-linear-to-r from-brand-cyan to-brand-purple text-brand-darker text-sm font-semibold hover:opacity-90 transition-opacity w-fit"
+              >
+                Napisz do mnie
+              </Link>
+            </div>
           </div>
         </RevealSection>
 

@@ -22,10 +22,10 @@ const SKILLS = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-4 px-8 relative bg-brand-darker">
+    <section id="skills" className="py-4 px-6 relative bg-brand-darker">
       <div className="absolute top-0 left-0 w-full h-[85%] bg-brand-dark/70 z-0" />
 
-      <div className="max-w-6xl mx-auto pt-12 relative z-10">
+      <div className="max-w-7xl mx-auto pt-4 relative z-10">
         <div className="mb-12">
           <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
             Co potrafię?
@@ -42,39 +42,26 @@ export default function Skills() {
           {SKILLS.map(({ name, icon: Icon, color, level }) => (
             <div
               key={name}
-              className="group flex flex-col gap-3 rounded-xl border border-brand-surface bg-brand-dark p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-subtle overflow-hidden relative"
+              className="flex items-center gap-4 rounded-xl border border-brand-surface bg-brand-dark p-4 transition-all duration-300 hover:-translate-y-1 hover:border-brand-subtle"
             >
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                className="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
                 style={{
-                  background: `radial-gradient(circle at 20% 50%, ${color}10, transparent 60%)`,
+                  background: `conic-gradient(${color} ${(level / 100) * 360}deg, var(--color-brand-surface) 0deg)`,
                 }}
-              />
-
-              <div className="flex items-center gap-3 relative z-10 p-1">
-                <Icon
-                  size={22}
-                  style={{ color }}
-                  className="transition-transform duration-300 group-hover:scale-110 shrink-0"
-                />
-
-                <span className="text-brand-text text-sm font-semibold block">
-                  {name}
-                </span>
-
-                <span className="text-brand-muted text-xs font-mono">
-                  {level}%
-                </span>
+              >
+                <div className="w-10.5 h-10.5 rounded-full bg-brand-dark flex items-center justify-center">
+                  <span className="text-[11px] font-mono text-brand-text">
+                    {level}%
+                  </span>
+                </div>
               </div>
 
-              <div className="w-full h-1 rounded-full bg-brand-surface overflow-hidden relative z-10">
-                <div
-                  className="h-full rounded-full"
-                  style={{
-                    width: `${level}%`,
-                    background: `linear-gradient(90deg, ${color}80, ${color})`,
-                  }}
-                ></div>
+              <div className="flex flex-col gap-1">
+                <span className="text-brand-text text-sm font-semibold">
+                  {name}
+                </span>
+                <Icon size={14} style={{ color }} />
               </div>
             </div>
           ))}

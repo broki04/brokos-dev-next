@@ -4,7 +4,7 @@ import { SERVICES } from "@/data/services";
 export default function Services() {
   return (
     <section id="services" className="py-24 pb-1 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
             Co oferuję
@@ -18,51 +18,48 @@ export default function Services() {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-24 mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-24">
           {SERVICES.map((service, i) => (
             <div
               key={service.tag}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 !== 0 ? "lg:[direction:rtl]" : ""}`}
+              className="rounded-2xl overflow-hidden border border-brand-surface bg-brand-dark flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-brand-subtle"
             >
-              <div className={i % 2 !== 0 ? "lg:[direction:ltr]" : ""}>
-                <span className="inline-block text-xs font-mono tracking-[3px] uppercase text-brand-cyan border border-brand-cyan/30 rounded px-3 py-1 mb-6">
-                  {service.tag}
-                </span>
+              <div className="relative aspect-video">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  loading="lazy"
+                />
 
-                <h3 className="text-2xl lg:text-3xl font-bold text-brand-text mb-4">
+                <div className="absolute inset-0 bg-linear-to-br from-brand-cyan/10 to-brand-purple/10" />
+
+                <span className="absolute top-3 left-3 font-mono text-xs tracking-wide text-brand-cyan bg-brand-dark/70 backdrop-blur-sm border border-brand-cyan/30 rounded px-2.5 py-1">
+                  {String(i + 1).padStart(2, "0")} · {service.tag}
+                </span>
+              </div>
+
+              <div className="p-6 flex flex-col gap-3 flex-1">
+                <h3 className="text-xl font-bold text-brand-text">
                   {service.title}
                 </h3>
 
-                <p className="text-brand-muted leading-relaxed mb-8">
+                <p className="text-brand-muted text-sm leading-relaxed">
                   {service.description}
                 </p>
 
-                <ul className="flex flex-col gap-3">
+                <ul className="flex flex-wrap gap-2 mt-2">
                   {service.features.map((f) => (
                     <li
                       key={f}
-                      className="flex items-center gap-3 text-brand-muted text-sm"
+                      className="text-brand-muted text-xs border border-brand-surface rounded-full px-3 py-1"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple shrink-0" />
                       {f}
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className={i % 2 !== 0 ? "lg:[direction:ltr]" : ""}>
-                <div className="relative isolate rounded-2xl overflow-hidden border border-brand-surface aspect-video group">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-
-                  <div className="absolute inset-0 bg-linear-to-br from-brand-cyan/10 to-brand-purple/10" />
-                </div>
               </div>
             </div>
           ))}

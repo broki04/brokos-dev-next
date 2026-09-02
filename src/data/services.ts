@@ -2,7 +2,7 @@ export const SERVICES = [
   {
     title: "Projektowanie stron internetowych",
     description:
-      "Tworzę nowoczesne, responsywne strony internetowe dopasowane do potrzeb Twojego biznesu. Każdy projekt realizuję z dbałością o estetykę, wydajność i doświadczenie użytkownika.",
+      "Projektuję strony, które przyciągają uwagę i dobrze się sprzedają — szybkie, responsywne i dopracowane w każdym szczególe, od pierwszego wrażenia po ostatni scroll.",
     features: [
       "Responsywny design",
       "Optymalizacja wydajności",
@@ -16,7 +16,7 @@ export const SERVICES = [
   {
     title: "Sklepy internetowe",
     description:
-      "Buduję intuicyjne sklepy e-commerce z pełną integracją płatności, zarządzaniem produktami i panelem zamówień. Technologie dopasowane do skali Twojego biznesu.",
+      "Uruchamiam sklepy internetowe gotowe na realną sprzedaż — z płatnościami, zarządzaniem produktami i zamówieniami skrojonymi pod skalę Twojego biznesu.",
     features: [
       "Integracja płatności",
       "Zarządzanie produktami",
@@ -30,7 +30,7 @@ export const SERVICES = [
   {
     title: "Aplikacje webowe",
     description:
-      "Projektuję i wdrażam złożone aplikacje webowe - od systemów CRM po narzędzia wewnętrzne. Nowoczesny stack technologiczny i skalowalny kod.",
+      "Buduję aplikacje webowe, które ogarniają realne procesy biznesowe — od systemów CRM po dedykowane narzędzia wewnętrzne, na nowoczesnym i skalowalnym stacku.",
     features: [
       "Architektura SPA",
       "REST API / GraphQL",
@@ -44,7 +44,7 @@ export const SERVICES = [
   {
     title: "Optymalizacja i SEO",
     description:
-      "Poprawiam szybkość ładowania, wyniki Core Web Vitals i widoczność w wyszukiwarkach. Audyt techniczny i wdrożenie konkretnych poprawek.",
+      "Sprawiam, że strona ładuje się błyskawicznie i łatwiej ją znaleźć w Google — audyt techniczny, poprawa Core Web Vitals i konkretne wdrożenia, nie tylko raport.",
     features: [
       "Core Web Vitals",
       "Audyt techniczny",
@@ -58,15 +58,24 @@ export const SERVICES = [
   {
     title: "Doradztwo IT i zestawy komputerowe",
     description:
-      "Pomagam dobrać sprzęt komputerowy dopasowany do budżetu i potrzeb - gaming, praca, montaż wideo. Regularnie publikuję polecany zestawy w różnych przedziałach cenowych.",
-    features: [
-      "Zestawy do gier",
-      "Zestawy do pracy",
-      "Doradztwo zakupowe",
-      "Aktualizacje co miesiąc",
-    ],
+      "Doradzam przy doborze sprzętu pod konkretny budżet i potrzeby — granie, pracę czy montaż wideo. Zestawy dobieram tak, żeby nie przepłacać za niepotrzebną moc.",
+    features: ["Zestawy do gier", "Zestawy do pracy", "Doradztwo zakupowe"],
     image:
       "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
     tag: "IT",
+  },
+  {
+    title: "Wsparcie i rozwój",
+    description:
+      "Zostaję przy projekcie po wdrożeniu — poprawki, nowe funkcje i bieżąca opieka, żebyś nie musiał szukać kogoś od zera przy każdej zmianie.",
+    features: [
+      "Aktualizacje i poprawki",
+      "Nowe funkcje",
+      "Monitoring i backupy",
+      "Stały kontakt",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    tag: "Support",
   },
 ];
