@@ -36,10 +36,7 @@ export default function Hero() {
             </span>
 
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-brand-text">
-              Mateusz{" "}
-              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-                Brokos
-              </span>
+              Mateusz <span className="text-gradient">Brokos</span>
             </h1>
 
             <h2 className="text-xl lg:text-2xl font-medium text-brand-muted">

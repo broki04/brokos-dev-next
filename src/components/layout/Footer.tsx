@@ -1,6 +1,7 @@
 import { SOCIAL_LINKS } from "@/data/socials";
 import { NAV_LINKS } from "../../data/nav";
 import { SITE_MAIL } from "@/lib/site";
+import AvailabilityBadge from "../ui/AvailabilityBadge";
 
 export default function Footer() {
   return (
@@ -8,9 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="flex flex-col gap-4">
           <a href="#" className="text-2xl font-bold tracking-tight">
-            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-              brokos
-            </span>
+            <span className="text-gradient">brokos</span>
             <span className="text-brand-text">Dev</span>
           </a>
 
@@ -74,12 +73,8 @@ export default function Footer() {
             <p className="text-brand-muted text-xs font-mono tracking-[2px] uppercase">
               Dostępność
             </p>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-brand-muted text-sm">
-                Otwarty na nowe projekty
-              </span>
-            </div>
+
+            <AvailabilityBadge />
           </div>
         </div>
       </div>

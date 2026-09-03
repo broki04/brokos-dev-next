@@ -1,22 +1,21 @@
 import Image from "next/image";
 import { SERVICES } from "@/data/services";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function Services() {
   return (
     <section id="services" className="py-24 pb-1 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Co oferuję
-          </p>
-
-          <h2 className="text-4xl lg:text-5xl font-bold text-brand-text">
-            Usługi &{" "}
-            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-              Realizacje
-            </span>
-          </h2>
-        </div>
+        <SectionHeading
+          className="mb-20"
+          titleClassName="text-4xl lg:text-5xl font-bold text-brand-text"
+          eyebrow="Co oferuję"
+          title={
+            <>
+              Usługi & <span className="text-gradient">Realizacje</span>
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-24">
           {SERVICES.map((service, i) => (

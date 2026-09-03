@@ -8,6 +8,7 @@ import {
   SiPhp,
   SiMysql,
 } from "react-icons/si";
+import SectionHeading from "../ui/SectionHeading";
 
 const SKILLS = [
   { name: "HTML", icon: SiHtml5, color: "#e34f26", level: 95 },
@@ -26,17 +27,16 @@ export default function Skills() {
       <div className="absolute top-0 left-0 w-full h-[85%] bg-brand-dark/70 z-0" />
 
       <div className="max-w-7xl mx-auto pt-4 relative z-10">
-        <div className="mb-12">
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Co potrafię?
-          </p>
-          <h2 className="text-4xl font-bold text-brand-text">
-            Umiejętności &{" "}
-            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-              Technologie
-            </span>
-          </h2>
-        </div>
+        <SectionHeading
+          className="mb-12"
+          titleClassName="text-4xl font-bold text-brand-text"
+          eyebrow="Co potrafię"
+          title={
+            <>
+              Umiejętności & <span className="text-gradient">Technologie</span>
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {SKILLS.map(({ name, icon: Icon, color, level }) => (

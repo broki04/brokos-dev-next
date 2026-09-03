@@ -4,6 +4,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import RevealSection from "../ui/RevealSection";
 import { REVIEWS } from "@/data/reviews";
 import Image from "next/image";
+import SectionHeading from "../ui/SectionHeading";
+
+const LOOPED_REVIEWS = [...REVIEWS, ...REVIEWS];
 
 export default function Reviews() {
   const shouldReduceMotion = useReducedMotion();
@@ -15,18 +18,16 @@ export default function Reviews() {
     >
       <div className="max-w-7xl mx-auto">
         <RevealSection>
-          <div className="mb-14">
-            <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-              Opinie
-            </p>
-
-            <h2 className="text-4xl font-bold">
-              Co mówią{" "}
-              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-                klienci
-              </span>
-            </h2>
-          </div>
+          <SectionHeading
+            className="mb-14"
+            titleClassName="text-4xl font-bold"
+            eyebrow="Opinie"
+            title={
+              <>
+                Co mówią <span className="text-gradient">klienci</span>
+              </>
+            }
+          />
         </RevealSection>
 
         <div className="overflow-hidden">
@@ -39,7 +40,7 @@ export default function Reviews() {
               ease: "linear",
             }}
           >
-            {[...REVIEWS, ...REVIEWS].map((t, i) => (
+            {LOOPED_REVIEWS.map((t, i) => (
               <div
                 key={i}
                 className="bg-brand-dark/40 backdrop-blur-md rounded-2xl p-6 flex flex-col items-center text-center w-2xs shrink-0 shadow-lg"

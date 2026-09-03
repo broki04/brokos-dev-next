@@ -41,9 +41,7 @@ export default function Navbar({ NAV_LINKS }: NavbarProps) {
             className={`${menuOpen ? "hidden" : ""} text-2xl font-bold tracking-light flex items-center gap-1 md:block`}
           >
             <Link href="/">
-              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-                brokos
-              </span>
+              <span className="text-gradient">brokos</span>
               <span className="text-brand-text">Dev</span>
             </Link>
           </h1>

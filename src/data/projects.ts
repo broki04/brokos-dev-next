@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "TypeScript", "MySQL", "Stripe", "Recharts"],
     href: "https://elitaserver.vercel.app",
     repo: "https://github.com/broki04/sigma-website",
-    image: "/elita-preview.png",
+    image: "/elita-preview.webp",
     status: "wip",
   },
   {

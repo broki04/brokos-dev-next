@@ -3,6 +3,8 @@
 import { SITE_MAIL } from "@/lib/site";
 import { AlertCircle, CheckCircle2, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
+import SectionHeading from "../ui/SectionHeading";
+import AvailabilityBadge from "../ui/AvailabilityBadge";
 
 const BUDGETS = [
   "do 1 000 zł",
@@ -47,23 +49,16 @@ export default function Contact() {
   return (
     <section id="contact" className="pt-14 pb-32 px-6 bg-brand-darker relative">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-10">
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Porozmawiajmy
-          </p>
-
-          <h2 className="text-3xl lg:text-4xl font-bold text-brand-text">
-            Napisz do{" "}
-            <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-              mnie
-            </span>
-          </h2>
-
-          <p className="mt-4 text-brand-muted text-sm leading-relaxed max-w-lg">
-            Szukasz full stack developera? Chętnie pomogę w realizacji
-            projektu lub dołączę do zespołu.
-          </p>
-        </div>
+        <SectionHeading
+          className="mb-12"
+          titleClassName="text-3xl lg:text-4xl font-bold text-brand-text"
+          eyebrow="Porozmawiajmy"
+          title={
+            <>
+              Napisz do <span className="text-gradient">mnie</span>
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-start">
           <form
@@ -249,12 +244,8 @@ export default function Contact() {
               <p className="text-brand-muted text-xs font-mono tracking-[2px] uppercase mb-2">
                 Dostępność
               </p>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-brand-muted text-sm">
-                  Otwarty na nowe projekty
-                </span>
-              </div>
+
+              <AvailabilityBadge />
             </div>
           </div>
         </div>

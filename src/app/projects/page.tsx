@@ -34,10 +34,7 @@ export default function ProjectsPage() {
             </p>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-text leading-tight">
-              Projekty &{" "}
-              <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-                Realizacje
-              </span>
+              Projekty & <span className="text-gradient">Realizacje</span>
             </h1>
           </RevealSection>
         </div>
@@ -58,8 +55,8 @@ export default function ProjectsPage() {
               </h3>
 
               <p className="text-brand-muted text-sm leading-relaxed">
-                Chętnie pomogę w realizacji strony, sklepu lub aplikacji
-                webowej — od pierwszego szkicu po wdrożenie.
+                Chętnie pomogę w realizacji strony, sklepu lub aplikacji webowej
+                — od pierwszego szkicu po wdrożenie.
               </p>
 
               <div className="flex items-center gap-2">

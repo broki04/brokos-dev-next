@@ -11,6 +11,16 @@
   --color-brand-subtle: #334155; /* subtytuły, labele */
 }
 
+@utility text-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-brand-cyan),
+    var(--color-brand-purple)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
 }

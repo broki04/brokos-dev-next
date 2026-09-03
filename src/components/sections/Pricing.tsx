@@ -1,16 +1,17 @@
 import clsx from "clsx";
 import { PRICING, ADDONS } from "@/data/pricing";
+import SectionHeading from "../ui/SectionHeading";
 
 export default function Pricing() {
   return (
     <section id="prices" className="pb-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
-          <p className="text-brand-cyan text-sm font-mono tracking-[4px] uppercase mb-4">
-            Cennik wg. usługi
-          </p>
-          <h2 className="text-4xl font-bold text-brand-text">Cennik</h2>
-        </div>
+        <SectionHeading
+          className="mb-12"
+          titleClassName="text-4xl font-bold text-brand-text"
+          eyebrow="Cennik wg. usługi"
+          title="Cennik"
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
           {PRICING.map((plan) => {
@@ -44,7 +45,7 @@ export default function Pricing() {
                   {plan.desc}
                 </p>
 
-                <div className="text-xl font-bold bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent leading-tight pt-3">
+                <div className="text-xl font-bold text-gradient leading-tight pt-3">
                   {plan.price}
                 </div>
 
